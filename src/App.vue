@@ -2,8 +2,8 @@
   <main>
     <Cycle
       :currentPageIndex="currentPageIndex"
+      :currentPageData="currentPageData"
       :transitionDuration="transitionDuration"
-      :class="{ visible: currentPageData.type === 'explanation' }"
       class="cycle"
     />
     <component
@@ -264,7 +264,7 @@ main  {
     transition: all $transition-duration ease-in-out;
     z-index: 1;
 
-    &.visible {
+    &.visible, &.cycle {
       opacity: 1;
       visibility: visible;
     }
