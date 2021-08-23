@@ -165,15 +165,14 @@ export default {
 <style lang="scss">
 @import './assets/normalize.css';
 @import './assets/fonts.css';
-
-$color-main: #323847;
-$color-lighter: #C2C3C8;
+@import './assets/variables.scss';
 
 #app {
   width: 100%;
   height: 100%;
   font-family: InterVar, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: $weight-regular;
   color: $color-main;
 }
 
@@ -218,7 +217,7 @@ main  {
     bottom: 0;
     left: 0;
     right: 0;
-    transition: all 0.2s ease-in-out;
+    transition: all $transition-duration ease-in-out;
     z-index: 1;
 
     &.visible {
@@ -259,8 +258,9 @@ nav {
   top: -20px;
   left: 0;
   right: 0;
+  min-width: 750px;
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  transition: all $transition-duration ease-in-out;
   z-index: 3;
 
   &.visible {
@@ -280,7 +280,7 @@ nav {
     border-radius: 2px;
     background: url('assets/icons/nav-left.svg') center no-repeat transparent;
     box-shadow: inset 0 0 0 2px transparent;
-    transition: all 0.2s ease-in-out;
+    transition: all $transition-duration ease-in-out;
 
     &:last-child {
       background-image: url('assets/icons/nav-right.svg');
@@ -303,6 +303,7 @@ nav {
     margin: 19px 0 0;
     padding: 0;
     list-style: none;
+    font-size: 16px;
 
     &:before {
       position: absolute;
@@ -324,11 +325,11 @@ nav {
       width: 14px;
       height: 14px;
       margin: 0 10px;
-      border: 2px solid rgba(50,56,71,0.3);
+      border: 2px solid rgba($color-main, 0.3);
       border-radius: 50%;
       background: #fff;
       box-shadow: 0 0 0 2px #fff;
-      transition: all 0.2s ease-in-out;
+      transition: all $transition-duration ease-in-out;
       cursor: pointer;
 
       &:first-child {
@@ -387,7 +388,7 @@ nav {
         right: -80px;
         text-align: center;
         font-size: 12px;
-        font-weight: 700;
+        font-weight: $weight-bold;
         line-height: 10px;
         text-shadow:
           0 1px 0 #fff,
@@ -406,7 +407,7 @@ nav {
           -2px 2px 0 #fff,
           1px -1px 0 #fff,
           2px -2px 0 #fff;
-        transition: all 0.2s ease-in-out;
+        transition: all $transition-duration ease-in-out;
       }
 
       &.active:after {
@@ -439,7 +440,7 @@ aside {
   left: 0;
   right: 0;
   pointer-events: none;
-  transition: all 0.2s ease-in-out;
+  transition: all $transition-duration ease-in-out;
   z-index: 10;
 
   &.open {
@@ -477,7 +478,7 @@ aside {
     border-radius: 50%;
     background-color: transparent;
     box-shadow: 0 0 0 2px transparent, 0 0 0 4px transparent;
-    transition: all 0.2s ease-in-out;
+    transition: all $transition-duration ease-in-out;
     z-index: 13;
 
     &:hover {
@@ -508,7 +509,7 @@ aside {
       right: 0;
       background: url('assets/icons/info.svg') center no-repeat;
       pointer-events: none;
-      transition: all 0.2s ease-in-out;
+      transition: all $transition-duration ease-in-out;
     }
 
     @at-root aside.open button:before {
@@ -540,7 +541,7 @@ aside {
     color: #fff;
     background: #3C4250;
     transform: translateX(15px);
-    transition: all 0.2s ease-in-out;
+    transition: all $transition-duration ease-in-out;
 
     @at-root aside.open section {
       visibility: visible;
@@ -556,7 +557,7 @@ aside {
     h3 {
       margin-top: 11px;
       font-size: 16px;
-      font-weight: 500;
+      font-weight: $weight-medium;
       line-height: 1.25;
     }
   }
