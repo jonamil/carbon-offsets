@@ -187,6 +187,10 @@ export default {
   mounted () {
     window.addEventListener('wheel', this.handleWheelEvent, { passive: false });
     window.addEventListener('keydown', this.handleKeypressEvent);
+
+    document.getElementsByTagName('cite').forEach(element => {
+      element.addEventListener('click', this.openInfoDrawer);
+    });
   },
 
   unmounted () {
@@ -204,7 +208,7 @@ export default {
 #app {
   width: 100%;
   height: 100%;
-  font-family: InterVar, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: $font-default;
   font-size: 12px;
   font-weight: $weight-regular;
   color: $color-main;
@@ -224,6 +228,29 @@ html, body {
   transition: all $transition-duration ease-in-out;
 }
 
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+h1, h2, blockquote {
+  font-family: Fraunces, 'Source Serif Pro', Charter, Georgia, serif;
+  font-variation-settings: 'SOFT' 20, 'WONK' 0;
+}
+
+h1, h2 {
+ font-weight: $weight-black;
+}
+
+blockquote {
+  font-style: italic;
+
+  sup {
+    font-family: $font-default;
+    font-size: 9px;
+    font-style: normal;
+  }
+}
+
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -240,12 +267,6 @@ button {
   &:focus-visible {
     box-shadow: 0 0 0 2px #fff, 0 0 0 4px $color-lighter;
   }
-}
-
-h1, h2 {
-  margin: 0;
-  font-family: Fraunces, 'Source Serif Pro', Charter, Georgia, serif;
-  font-variation-settings: 'SOFT' 75;
 }
 
 main section, nav, aside {

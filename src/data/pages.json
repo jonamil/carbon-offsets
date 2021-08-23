@@ -5,50 +5,154 @@
 	},
 	{
 		"title": "The Offsetting Cycle",
-		"type": "chapter"
+		"type": "chapter",
+		"preTitle": "Part One",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "Awareness of the climate crisis is on the rise. Consumers are starting to pay more conscious attention to the climate impact of their actions, most prominently air travel. Likewise, companies find themselves under increasing pressure to reduce their carbon emissions, with more and more of them committing to climate targets.[1]"
+			},
+			{
+				"type": "paragraph",
+				"content": "The goal of these pledges: becoming “carbon neutral” and reaching “net zero” emissions. Yet more often than not, companies’ intentions are not actually to bring their emissions down to zero. Instead, companies and consumers compensate their climate impact through a process called carbon offsetting.[2]"
+			}
+		]
 	},
 	{
 		"title": "Carbon Emissions",
-		"type": "explanation"
+		"type": "explanation",
+		"textPosition": "left",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "Carbon emissions have been on the rise for decades, peaking at **33 billion tons** in 2019 and accelerating the process of global warming.[3] While different kinds of greenhouse gases (CO₂, methane, nitrogen dioxide, etc.) affect the climate to different degrees, all emissions are calculated as the mass of CO₂ that would have caused the same impact (called CO₂ equivalents and annotated as CO₂e)."
+			}
+		]
 	},
 	{
 		"title": "Offset Projects",
-		"type": "explanation"
+		"type": "explanation",
+		"textPosition": "right",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "In different parts of the world, most commonly the Global South, offset projects work towards reducing or counteracting carbon emissions, for example by preventing deforestation or planting new trees. Various standards, set by governmental bodies or NGOs, exist to calculate and certify the amount of carbon prevented by these efforts.[4] On paper, offset projects are estimated to have compensated **8.7 billion tons** of CO₂e in 2019,[5] amounting to over a quarter of all carbon emitted globally that year."
+			}
+		]
 	},
 	{
 		"title": "Carbon Economy",
-		"type": "explanation"
+		"type": "explanation",
+		"textPosition": "right",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "Because greenhouse gases equally contribute to global warming no matter where they occur, emissions caused in one part of the world can be “offset” by emissions prevented in another. These exchanges take the shape of carbon markets, through which projects sell their positive climate impacts to countries, companies and consumers. The projects receive money, in turn issuing certificates for a certain amount of carbon emissions they have compensated.[6]"
+			},
+			{
+				"type": "paragraph",
+				"content": "Within the carbon economy, one can differentiate between “compliance” and “voluntary” markets. The former involve countries required to meet mandatory emissions targets, while the latter cater to companies and individuals wanting to offset their emissions voluntarily. All carbon offset sales totaled a value of **214.5 billion USD** in 2019.[7]"
+			}
+		]
 	},
 	{
 		"title": "A Balanced Equation?",
-		"type": "chapter"
+		"type": "chapter",
+		"preTitle": "Part Two"
 	},
 	{
-		"title": "Offset vs. Reductions",
-		"type": "explanation"
+		"title": "Offsets vs. Reductions",
+		"type": "explanation",
+		"cyclePosition": "right",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "No offsetting practices are as good for the climate as not emitting greenhouse gases in the first place. Critics of carbon offsetting argue that the offset market gives companies and people a justification to carry on with business as usual and advertise their “carbon neutrality” without taking steps to reduce their emissions:"
+			},
+			{
+				"type": "quote",
+				"content": "Offsetting one’s own emissions may distract countries and companies from the fact that they should constantly take more action to reduce their own emissions and […] also poses the danger that it may even serve as a justification to continue emitting or even for emissions to increase.[8]"
+			},
+			{
+				"type": "paragraph",
+				"content": "For this reason, carbon offsets invite comparisons to medieval indulgences: one’s responsibilities can be dodged simply by paying money.[9]"
+			}
+		]
 	},
 	{
 		"title": "Project Diversity",
-		"type": "explanation"
+		"type": "explanation",
+		"cyclePosition": "left",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "Carbon offsets are almost always explained with the example of forest-related projects, evoking associations of trees that quite literally suck CO₂ back out of the atmosphere. Yet the reality is much more complex, as many different kinds of offset projects exist. Beside tree planting, renewable energy projects are widespread as well, as are projects revolving around the optimization of fossil fuel sources and the capture of toxic nitrogen dioxide fumes created as a byproduct of chemical processes.[10][11][12][13]"
+			},
+			{
+				"type": "paragraph",
+				"content": "As the latter two examples demonstrate, some types of offset projects are quite far removed from imaginations of “green” and “eco-friendly” actions. Yet at the same time, the most “green”-seeming projects are not necessarily the most effective ones. The capture of nitrogen dioxide gases is consistently rated as one of the most effective measures,[14][15] while the sustainability of afforestation projects is increasingly being called into question.[16] Whether a project is effective depends on several conditions, which the following pages will explore."
+			}
+		]
 	},
 	{
 		"title": "Additionality",
-		"type": "explanation"
+		"type": "explanation",
+		"cyclePosition": "left",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "The most important condition any carbon offset project must satisfy is additionality. For a project’s emission reductions to be deemed “additional”, they must happen as a direct consequence of the carbon offset market and the sale of certificates. If the emissions had been reduced anyway, either with the motivation of turning a profit from other sources or because of legal regulations, they cannot be considered additional.[17][18][19]"
+			},
+			{
+				"type": "image",
+				"content": "additionality"
+			},
+			{
+				"type": "paragraph",
+				"content": "Renewable energy sources, for instance, are increasingly cost competitive with fossil fuels and may also be supported through government subsidies. Therefore, even despite having a positive climate impact, renewable energy projects are not very effective as carbon offsets.[20]"
+			},
+			{
+				"type": "paragraph",
+				"content": "Overall, determining whether a project is additional is inherently subjective, as it relies on comparing a project’s activities to an imagined scenario without the sale of carbon offsets. As Dan Welch poignantly puts it:"
+			},
+			{
+				"type": "quote",
+				"content": "Offsets are an imaginary commodity created by deducting what you hope happens from what you guess would have happened.[21]"
+			}
+		]
 	},
 	{
 		"title": "Inaccurate Calculations",
-		"type": "explanation"
+		"type": "explanation",
+		"cyclePosition": "left",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "In order to calculate an offset project’s climate benefits, a baseline must be established. This baseline reflects the hypothetical scenario of what would have happened if an offset project had not been implemented and business had instead carried on as usual. The amount of certificates sold by a project is equal to the difference between emissions in the baseline scenario and emissions generated with the offset project in place.[22][23]"
+			},
+			{
+				"type": "paragraph",
+				"content": "As with determining additionality, the difficulty lies in the fact that this baseline scenario is hypothetical, an alternate reality that will never actually happen and thus cannot be verified. Even more problematically, projects may deliberately overestimate baseline emissions to maximize their financial gain:"
+			},
+			{
+				"type": "quote",
+				"content": "The more deforestation [and other polluting activities] you anticipate, the more credits you generate, the more money you stand to make. It’s easy to game the system by nudging the numbers toward the bleakest alternative reality.[24]"
+			}
+		]
 	},
 	{
 		"title": "Permanence",
-		"type": "explanation"
+		"type": "explanation",
+		"cyclePosition": "left"
 	},
 	{
 		"title": "Double Crediting",
-		"type": "explanation"
+		"type": "explanation",
+		"cyclePosition": "left"
 	},
 	{
 		"title": "An Ineffective System",
-		"type": "chapter"
+		"type": "chapter",
+		"preTitle": "Conclusion"
 	}
 ]
