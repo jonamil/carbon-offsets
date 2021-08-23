@@ -1,30 +1,34 @@
 <template>
   <main>
-    <section
+    <Cycle
+      :currentPageIndex="currentPageIndex"
+      :transitionDuration="transitionDuration"
+      :class="{ visible: currentPageData.type === 'explanation' }"
+      class="cycle"
+    />
+    <component
       v-for="(page, index) in pages"
       :key="index"
-      :class="currentPageIndex === index ? 'visible' : ''"
-    >
-      <h1>{{ page.title }}</h1>
-    </section>
-    <section :class="'cycle' + (currentPageData.type === 'explanation' ? ' visible' : '')">
-      <div></div>
-    </section>
+      :is="componentNameForPageType(page.type)"
+      :page="page"
+      :sources="sources"
+      :class="{ visible: currentVisiblePageIndex === index }"
+    />
   </main>
-  <nav :class="currentPageIndex > 0 ? 'visible' : ''">
+  <nav :class="{ visible: currentPageIndex > 0 }">
     <button @click="setPageIndex(currentPageIndex - 1)" />
     <ul>
       <li
         v-for="(page, index) in pages"
         :key="index"
-        :class="pageStatusForIndex(index) + ' ' + page.type"
+        :class="[pageStatusForIndex(index), page.type]"
         :data-title="page.title"
         @click="setPageIndex(index)"
       />
     </ul>
     <button @click="setPageIndex(currentPageIndex + 1)" />
   </nav>
-  <aside :class="infoDrawerOpen ? 'open' : ''" @click.self="closeInfoDrawer()">
+  <aside :class="{ open: infoDrawerOpen }" @click.self="closeInfoDrawer()">
     <section>
       <h1>Carbon Neutrality:<br>A Label For Sale?</h1>
       <h3>An introduction to carbon offsets:<br>how they work and where they fail</h3>
@@ -34,23 +38,34 @@
 </template>
 
 <script>
+import StartPage from './components/StartPage.vue';
+import ChapterPage from './components/ChapterPage.vue';
+import ExplanationPage from './components/ExplanationPage.vue';
+import Cycle from './components/Cycle.vue';
+
 import pages from './data/pages.json';
+import sources from './data/sources.json';
 
 export default {
   name: 'App',
 
   components: {
-    
+    StartPage,
+    ChapterPage,
+    ExplanationPage,
+    Cycle
   },
 
-  data () {
+  data() {
     return {
       pages,
-      
+      sources,
+
       currentPageIndex: 0,
+      currentVisiblePageIndex: 0,
       infoDrawerOpen: false,
 
-      transitionDuration: 500,
+      transitionDuration: 400,
       transitionInProgress: false,
       
       lastScrollDelta: 0,
@@ -69,6 +84,15 @@ export default {
       if (index < this.currentPageIndex) return 'past';
       else if (index === this.currentPageIndex) return 'active';
       else return 'future';
+    },
+    componentNameForPageType(type) {
+      const pageTypes = {
+        'start': 'StartPage',
+        'chapter': 'ChapterPage',
+        'explanation': 'ExplanationPage'
+      };
+
+      return (type in pageTypes) ? pageTypes[type] : 'span';
     },
     setPageIndex(index) {
       if (!this.transitionInProgress && index !== this.currentPageIndex && index >= 0) {
@@ -150,6 +174,16 @@ export default {
     }
   },
 
+  watch: {
+    currentPageIndex: function(newPageIndex) {
+      this.currentVisiblePageIndex = false;
+
+      setTimeout(() => {
+        this.currentVisiblePageIndex = newPageIndex;
+      }, this.transitionDuration / 2);
+    }
+  },
+
   mounted () {
     window.addEventListener('wheel', this.handleWheelEvent, { passive: false });
     window.addEventListener('keydown', this.handleKeypressEvent);
@@ -178,6 +212,16 @@ export default {
 
 html, body {
   overflow: hidden;
+}
+
+.canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1120px;
+  height: 560px;
+  transform: translateX(-50%) $canvas-translate-y;
+  transition: all $transition-duration ease-in-out;
 }
 
 button {
@@ -227,26 +271,6 @@ main  {
 
     &.cycle {
       pointer-events: none;
-      z-index: 2;
-
-      div {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 620px;
-        height: 500px;
-        background: rgba(255,0,0,0.2);
-        transform: translateX(-50%) translateY(-50%);
-        transition: all 0.2s ease-in-out;
-      }
-    }
-
-    h1 {
-      position: relative;
-      margin-top: 92.5vh;
-      text-align: center;
-      font-size: 32px;
-      color: $color-lighter;
     }
   }
 }
