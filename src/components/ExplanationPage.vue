@@ -7,26 +7,26 @@
           v-for="(element, index) in page.elements"
           :key="index"
         >
-          <Paragraph
+          <TextParagraph
             v-if="element.type === 'paragraph' || element.type === 'quote'"
             :type="element.type"
             :content="element.content"
             :sources="sources"
           />
-      </template>
+        </template>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Paragraph from './Paragraph.vue';
+import TextParagraph from './TextParagraph.vue';
 
 export default {
   name: 'ExplanationPage',
 
   components: {
-    Paragraph
+    TextParagraph
   },
 
   props: {

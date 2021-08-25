@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Paragraph',
+  name: 'TextParagraph',
 
   props: {
     content: {

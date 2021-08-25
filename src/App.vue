@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Cycle
+    <CycleView
       :currentPageIndex="currentPageIndex"
       :currentPageData="currentPageData"
       :transitionDuration="transitionDuration"
@@ -41,7 +41,7 @@
 import StartPage from './components/StartPage.vue';
 import ChapterPage from './components/ChapterPage.vue';
 import ExplanationPage from './components/ExplanationPage.vue';
-import Cycle from './components/Cycle.vue';
+import CycleView from './components/CycleView.vue';
 
 import pages from './data/pages.json';
 import sources from './data/sources.json';
@@ -53,7 +53,7 @@ export default {
     StartPage,
     ChapterPage,
     ExplanationPage,
-    Cycle
+    CycleView
   },
 
   data() {
@@ -91,7 +91,6 @@ export default {
         'chapter': 'ChapterPage',
         'explanation': 'ExplanationPage'
       };
-
       return (type in pageTypes) ? pageTypes[type] : 'span';
     },
     setPageIndex(index) {
@@ -169,7 +168,14 @@ export default {
               this.setPageIndex(this.currentPageIndex + 1);
             }
           }
+
+          event.preventDefault();
+          return false;
+        } else {
+          return event;
         }
+      } else {
+        return event;
       }
     }
   },
