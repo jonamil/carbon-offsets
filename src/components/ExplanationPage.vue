@@ -1,7 +1,18 @@
 <template>
   <section>
     <div class="canvas">
-      <div class="explanation" :class="{ left: page.textPosition === 'left' || page.cyclePosition === 'right', wide: 'cyclePosition' in page }">
+      <div
+        class="explanation"
+        :class="{
+          left: page.textPosition === 'left' || page.cyclePosition === 'right',
+          wide: 'cyclePosition' in page,
+          top: page.textOffset === 'top',
+          bottom: page.textOffset === 'bottom'
+        }"
+        :style="{
+          transform: numericTextOffset ? 'translateY(calc(-50% + ' + numericTextOffset + 'px))' : ''
+        }"
+      >
         <h2>{{ page.title }}</h2>
         <template
           v-for="(element, index) in page.elements"
@@ -15,6 +26,13 @@
           />
         </template>
       </div>
+      <div
+        class="connector"
+        :style="{
+          width: page.connectorWidth ? page.connectorWidth + 'px' : '',
+          transform: page.connectorOffset ? 'translateY(calc(-1px + ' + page.connectorOffset + 'px))' : ''
+        }"
+      />
     </div>
   </section>
 </template>
@@ -38,6 +56,14 @@ export default {
       type: Object,
       default: () => {}
     }
+  },
+
+  computed: {
+    numericTextOffset() {
+      if (typeof this.page.textOffset === 'number') return this.page.textOffset;
+      else if (!('textOffset' in this.page) && this.page.connectorOffset) return this.page.connectorOffset;
+      else return false;
+    }
   }
 }
 </script>
@@ -50,11 +76,10 @@ section {
     position: absolute;
     right: 0;
     top: 50%;
-    // bottom: -13px;
     width: 220px;
     padding: 8px 0 10px 15px;
     border-width: 0 0 0 2px;
-    border-color: $color-lighter;
+    border-color: rgba($color-main, 0.3);
     border-style: solid;
     transform: translateY(-50%);
 
@@ -76,6 +101,19 @@ section {
       margin-right: 0;
     }
 
+    &.top, &.bottom {
+      transform: none;
+    }
+
+    &.top {
+      top: 41px;
+    }
+
+    &.bottom {
+      top: unset;
+      bottom: 30px;
+    }
+
     h2 {
       margin-bottom: -2px;
       font-size: 18px;
@@ -94,7 +132,7 @@ section {
       line-height: 1.25;
 
       &:last-child {
-        margin-bottom: 0;;
+        margin-bottom: 0;
       }
 
       &:before {
@@ -109,6 +147,29 @@ section {
         font-variation-settings: 'opsz' 38;
         color: rgba($color-main, 0.12);
       }
+    }
+  }
+
+  .connector {
+    position: absolute;
+    top: 50%;
+    right: 237px;
+    height: 2px;
+    background: rgba($color-main, 0.3);
+    transform: translateY(-1px);
+
+    @at-root .explanation.left + .connector {
+      left: 237px;
+      right: unset;
+    }
+
+    @at-root .explanation.wide + .connector {
+      right: 377px;
+    }
+
+    @at-root .explanation.left.wide + .connector {
+      left: 377px;
+      right: unset;
     }
   }
 }

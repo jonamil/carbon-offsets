@@ -22,6 +22,8 @@
 		"title": "Carbon Emissions",
 		"type": "explanation",
 		"textPosition": "left",
+		"connectorOffset": -108,
+		"connectorWidth": 142,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -32,7 +34,9 @@
 	{
 		"title": "Offset Projects",
 		"type": "explanation",
-		"textPosition": "right",
+		"textOffset": "top",
+		"connectorOffset": -118,
+		"connectorWidth": 146,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -43,7 +47,9 @@
 	{
 		"title": "Carbon Economy",
 		"type": "explanation",
-		"textPosition": "right",
+		"textOffset": "bottom",
+		"connectorOffset": 182,
+		"connectorWidth": 204,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -64,6 +70,9 @@
 		"title": "Offsets vs. Reductions",
 		"type": "explanation",
 		"cyclePosition": "right",
+		"textOffset": "top",
+		"connectorOffset": -108,
+		"connectorWidth": 162,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -83,6 +92,9 @@
 		"title": "Project Diversity",
 		"type": "explanation",
 		"cyclePosition": "left",
+		"textOffset": "bottom",
+		"connectorOffset": 40,
+		"connectorWidth": 44,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -98,6 +110,9 @@
 		"title": "Additionality",
 		"type": "explanation",
 		"cyclePosition": "left",
+		"textOffset": "top",
+		"connectorOffset": -118,
+		"connectorWidth": 167,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -125,6 +140,9 @@
 		"title": "Inaccurate Calculations",
 		"type": "explanation",
 		"cyclePosition": "left",
+		"textOffset": "top",
+		"connectorOffset": -118,
+		"connectorWidth": 167,
 		"elements": [
 			{
 				"type": "paragraph",
