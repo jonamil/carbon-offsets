@@ -10,11 +10,11 @@
 		"elements": [
 			{
 				"type": "paragraph",
-				"content": "Awareness of the climate crisis is on the rise. Consumers are starting to pay more conscious attention to the climate impact of their actions, most prominently air travel. Likewise, companies find themselves under increasing pressure to reduce their carbon emissions, with more and more of them committing to climate targets.[1]"
+				"content": "Awareness of the climate crisis is on the rise. Consumers are starting to pay more conscious attention to the climate impact of their actions, such as air travel. Likewise, countries and companies find themselves under increasing pressure to reduce their carbon emissions, with more and more of them committing to climate targets.[1]"
 			},
 			{
 				"type": "paragraph",
-				"content": "The goal of these pledges: becoming “carbon neutral” and reaching “net zero” emissions. Yet more often than not, companies’ intentions are not actually to bring their emissions down to zero. Instead, companies and consumers compensate their climate impact through a process called carbon offsetting.[2]"
+				"content": "The goal of these pledges: becoming “carbon neutral” and reaching “net zero” emissions. Yet more often than not, companies’ intentions are not actually to bring their emissions down to zero. Instead, they compensate their climate impact through the process of carbon offsetting.[2]"
 			}
 		]
 	},
@@ -64,7 +64,17 @@
 	{
 		"title": "A Balanced Equation?",
 		"type": "chapter",
-		"preTitle": "Part Two"
+		"preTitle": "Part Two",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "The result of this system is a closed loop, one that suggests emissions and offsets are perfectly balanced and emissions effectively nullified. The benefits for the climate look obvious."
+			},
+			{
+				"type": "quote",
+				"content": "Yet is being “carbon neutral” and reaching “net zero” really that simple?"
+			}
+		]
 	},
 	{
 		"title": "Offsets vs. Reductions",

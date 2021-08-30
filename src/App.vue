@@ -252,7 +252,6 @@ blockquote {
 
   sup {
     font-family: $font-default;
-    font-size: 9px;
     font-style: normal;
   }
 }
@@ -321,28 +320,48 @@ nav {
   }
 
   button {
+    position: relative;
     display: inline-block;
-    opacity: 0.3;
     vertical-align: top;
     width: 24px;
     height: 34px;
     margin: 10px 10px 0;
     padding: 0;
     border-radius: 2px;
-    background: url('assets/icons/nav-left.svg') center no-repeat transparent;
+    background: url('~@/assets/icons/nav-left-stroke.svg') center no-repeat transparent;
     box-shadow: inset 0 0 0 2px transparent;
     transition: all $transition-duration ease-in-out;
 
     &:last-child {
-      background-image: url('assets/icons/nav-right.svg');
+      background-image: url('~@/assets/icons/nav-right-stroke.svg');
     }
 
     &:focus-visible {
-      opacity: 1;
       box-shadow: inset 0 0 0 2px $color-lighter;
     }
 
-    &:hover {
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      opacity: 0.3;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url('~@/assets/icons/nav-left.svg') center no-repeat transparent;
+      transition: all $transition-duration ease-in-out;
+    }
+
+    &:last-child:after {
+      background-image: url('~@/assets/icons/nav-right.svg');
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:focus-visible:after {
       opacity: 1;
     }
   }
@@ -558,7 +577,7 @@ aside {
       bottom: 0;
       left: 0;
       right: 0;
-      background: url('assets/icons/info.svg') center no-repeat;
+      background: url('~@/assets/icons/info.svg') center no-repeat;
       pointer-events: none;
       transition: all $transition-duration ease-in-out;
     }
@@ -569,7 +588,7 @@ aside {
 
     &:after {
       opacity: 0;
-      background-image: url('assets/icons/close.svg');
+      background-image: url('~@/assets/icons/close.svg');
       transform: rotate(45deg);
     }
 
