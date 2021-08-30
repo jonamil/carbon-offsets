@@ -24,6 +24,10 @@
             :content="element.content"
             :sources="sources"
           />
+          <img
+            v-else-if="element.type === 'image' && pathToImage(element.content)"
+            :src="pathToImage(element.content)"
+          />
         </template>
       </div>
       <div
@@ -63,6 +67,16 @@ export default {
       if (typeof this.page.textOffset === 'number') return this.page.textOffset;
       else if (!('textOffset' in this.page) && this.page.connectorOffset) return this.page.connectorOffset;
       else return false;
+    }
+  },
+
+  methods: {
+    pathToImage(filename) {
+      try {
+        return require('@/assets/explanations/' + filename + '.svg');
+      } catch (error) {
+        return '';
+      }
     }
   }
 }
@@ -146,6 +160,17 @@ section {
         font-weight: $weight-black;
         font-variation-settings: 'opsz' 38;
         color: rgba($color-main, 0.12);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-height: 140px;
+      margin: 16px 0;
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
