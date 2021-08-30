@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import TextParagraph from './TextParagraph.vue';
+import TextParagraph from '@/components/TextParagraph.vue';
 
 export default {
   name: 'ExplanationPage',
@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/variables.scss';
+@import '~@/assets/variables.scss';
 
 section {
   .explanation {

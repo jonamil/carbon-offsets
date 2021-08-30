@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import StartPage from './components/StartPage.vue';
-import ChapterPage from './components/ChapterPage.vue';
-import ExplanationPage from './components/ExplanationPage.vue';
-import CycleView from './components/CycleView.vue';
+import StartPage from '@/components/StartPage.vue';
+import ChapterPage from '@/components/ChapterPage.vue';
+import ExplanationPage from '@/components/ExplanationPage.vue';
+import CycleView from '@/components/CycleView.vue';
 
-import pages from './data/pages.json';
-import sources from './data/sources.json';
+import pages from '@/data/pages.json';
+import sources from '@/data/sources.json';
 
 export default {
   name: 'App',
@@ -207,9 +207,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import './assets/normalize.css';
-@import './assets/fonts.css';
-@import './assets/variables.scss';
+@import '~@/assets/normalize.css';
+@import '~@/assets/fonts.css';
+@import '~@/assets/variables.scss';
 
 #app {
   width: 100%;

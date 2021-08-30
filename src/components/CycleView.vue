@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="canvas" :class="currentCyclePosition">
-      <img id="preview" :class="currentClasses['preview']" src="../assets/cycle.svg" />
+      <img id="preview" :class="currentClasses['preview']" src="@/assets/cycle.svg" />
     </div>
   </section>
 </template>
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/variables.scss';
+@import '~@/assets/variables.scss';
 
 section {
   .canvas {
