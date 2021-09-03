@@ -28,8 +28,8 @@ export default {
 section {
   h4 {
     position: absolute;
-    top: 13px;
-    right: 52px;
+    top: 1.3rem;
+    right: 5.2rem;
     text-align: right;
     font-weight: $weight-semibold;
     line-height: 1.2;
@@ -40,20 +40,20 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 600px;
     padding-bottom: 30px;
+    width: 60.0rem;
     transform: translateX(-50%) translateY(-50%);
 
     h1 {
       text-align: center;
-      font-size: 48px;
+      font-size: 4.8rem;
       line-height: 1.1;
     }
 
     h3 {
-      margin-top: 46px;
+      margin-top: 4.6rem;
       text-align: center;
-      font-size: 22px;
+      font-size: 2.2rem;
       font-weight: $weight-medium;
       line-height: 1.2;
     }

@@ -53,12 +53,12 @@ export default {
 p, blockquote {
   sup {
     position: relative;
-    top: -3px;
-    margin-left: 0.5px;
-    padding: 1px 3px 1px;
-    font-size: 9px;
+    top: -0.3rem;
+    margin-left: 0.05rem;
+    padding: 0.1rem 0.3rem 0.1rem;
+    font-size: 0.9rem;
     font-weight: $weight-medium;
-    border-radius: 2px;
+    border-radius: 0.2rem;
     background: rgba($color-main, 0.15);
     cursor: pointer;
     transition: all $transition-duration ease-in-out;
@@ -69,7 +69,7 @@ p, blockquote {
     }
 
     + sup {
-      margin-left: 2px;
+      margin-left: 0.2rem;
     }
 
     cite {
@@ -78,15 +78,15 @@ p, blockquote {
       visibility: hidden;
       opacity: 0;
       bottom: 100%;
-      left: -90px;
-      right: -90px;
-      margin-bottom: 2px;
-      padding: 6px 9px 7px;
-      font-size: 10px;
+      left: -9.0rem;
+      right: -9.0rem;
+      margin-bottom: 0.2rem;
+      padding: 0.6rem 0.9rem 0.7rem;
+      font-size: 1.0rem;
       font-weight: $weight-regular;
       font-style: normal;
       line-height: 1.25;
-      border-radius: 2px;
+      border-radius: 0.2rem;
       background: $color-main;
       color: #fff;
       cursor: e-resize;
@@ -102,7 +102,7 @@ p, blockquote {
         display: block;
         content: '';
         top: 100%;
-        bottom: -2px;
+        bottom: -0.2rem;
         left: 0;
         right: 0;
       }

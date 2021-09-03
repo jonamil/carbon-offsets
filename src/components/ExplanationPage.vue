@@ -10,7 +10,7 @@
           bottom: page.textOffset === 'bottom'
         }"
         :style="{
-          transform: numericTextOffset ? 'translateY(calc(-50% + ' + numericTextOffset + 'px))' : ''
+          transform: numericTextOffset ? 'translateY(calc(-50% + ' + numericTextOffset / 10 + 'rem))' : ''
         }"
       >
         <h2>{{ page.title }}</h2>
@@ -33,8 +33,8 @@
       <div
         class="connector"
         :style="{
-          width: page.connectorWidth ? page.connectorWidth + 'px' : '',
-          transform: page.connectorOffset ? 'translateY(calc(-1px + ' + page.connectorOffset + 'px))' : ''
+          width: page.connectorWidth ? page.connectorWidth / 10 + 'rem' : '',
+          transform: page.connectorOffset ? 'translateY(calc(-0.1rem + ' + page.connectorOffset / 10 + 'rem))' : ''
         }"
       />
     </div>
@@ -90,9 +90,9 @@ section {
     position: absolute;
     right: 0;
     top: 50%;
-    width: 220px;
-    padding: 8px 0 10px 15px;
-    border-width: 0 0 0 2px;
+    width: 22.0rem;
+    padding: 0.8rem 0 1.0rem 1.5rem;
+    border-width: 0 0 0 0.2rem;
     border-color: rgba($color-main, 0.3);
     border-style: solid;
     transform: translateY(-50%);
@@ -101,17 +101,17 @@ section {
       left: 0;
       right: unset;
       padding-left: 0;
-      padding-right: 15px;
-      border-width: 0 2px 0 0;
+      padding-right: 1.5rem;
+      border-width: 0 0.2rem 0 0;
     }
 
     &.wide {
-      width: 340px;
-      margin-right: 20px;
+      width: 34.0rem;
+      margin-right: 2.0rem;
     }
 
     &.left.wide {
-      margin-left: 20px;
+      margin-left: 2.0rem;
       margin-right: 0;
     }
 
@@ -120,28 +120,28 @@ section {
     }
 
     &.top {
-      top: 41px;
+      top: 4.1rem;
     }
 
     &.bottom {
       top: unset;
-      bottom: 30px;
+      bottom: 3.0rem;
     }
 
     h2 {
-      margin-bottom: -2px;
-      font-size: 18px;
+      margin-bottom: -0.2rem;
+      font-size: 1.8rem;
     }
 
     p {
-      margin: 8px 0 0;
+      margin: 0.8rem 0 0;
       line-height: 1.3;
     }
 
     blockquote {
       position: relative;
-      margin: 16px 0;
-      font-size: 14px;
+      margin: 1.6rem 0;
+      font-size: 1.4rem;
       font-weight: $weight-medium;
       line-height: 1.25;
 
@@ -153,9 +153,9 @@ section {
         position: absolute;
         display: block;
         content: '“';
-        top: -28px;
-        left: -8px;
-        font-size: 116px;
+        top: -2.8rem;
+        left: -0.8rem;
+        font-size: 11.6rem;
         font-style: normal;
         font-weight: $weight-black;
         font-variation-settings: 'opsz' 38;
@@ -166,8 +166,8 @@ section {
     img {
       display: block;
       width: 100%;
-      max-height: 140px;
-      margin: 16px 0;
+      max-height: 14.0rem;
+      margin: 1.6rem 0;
 
       &:last-child {
         margin-bottom: 0;
@@ -178,22 +178,22 @@ section {
   .connector {
     position: absolute;
     top: 50%;
-    right: 237px;
-    height: 2px;
+    right: 23.7rem;
+    height: 0.2rem;
     background: rgba($color-main, 0.3);
-    transform: translateY(-1px);
+    transform: translateY(-0.1rem);
 
     @at-root .explanation.left + .connector {
-      left: 237px;
+      left: 23.7rem;
       right: unset;
     }
 
     @at-root .explanation.wide + .connector {
-      right: 377px;
+      right: 37.7rem;
     }
 
     @at-root .explanation.left.wide + .connector {
-      left: 377px;
+      left: 37.7rem;
       right: unset;
     }
   }

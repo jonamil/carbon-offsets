@@ -211,25 +211,41 @@ export default {
 @import '~@/assets/fonts.css';
 @import '~@/assets/variables.scss';
 
+html, body {
+  overflow: hidden;
+}
+
+html {
+  font-size: 10px;
+}
+
+@media (max-width: 1199px) {
+  html {
+    font-size: calc(100vw / 1200 * 10);
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 5px;
+  }
+}
+
 #app {
   width: 100%;
   height: 100%;
   font-family: $font-default;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: $weight-regular;
   color: $color-main;
-}
-
-html, body {
-  overflow: hidden;
 }
 
 .canvas {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1120px;
-  height: 560px;
+  width: 112.0rem;
+  height: 56.0rem;
   transform: translateX(-50%) $canvas-translate-y;
   transition: all $transition-duration ease-in-out;
 }
@@ -270,7 +286,7 @@ button {
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px $color-lighter;
+    box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.4rem $color-lighter;
   }
 }
 
@@ -281,8 +297,8 @@ main section, nav, aside {
 main  {
   section {
     position: absolute;
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -291,8 +307,8 @@ main  {
     z-index: 1;
 
     &.visible, &.cycle {
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
     }
 
     &.cycle {
@@ -305,10 +321,10 @@ nav {
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  top: -20px;
+  top: -2.0rem;
   left: 0;
   right: 0;
-  min-width: 750px;
+  min-width: 75.0rem;
   text-align: center;
   transition: all $transition-duration ease-in-out;
   z-index: 3;
@@ -323,13 +339,14 @@ nav {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    width: 24px;
-    height: 34px;
-    margin: 10px 10px 0;
+    width: 2.4rem;
+    height: 3.4rem;
+    margin: 1.0rem 1.0rem 0;
     padding: 0;
-    border-radius: 2px;
+    border-radius: 0.2rem;
     background: url('~@/assets/icons/nav-left-stroke.svg') center no-repeat transparent;
-    box-shadow: inset 0 0 0 2px transparent;
+    background-size: 2.0rem;
+    box-shadow: inset 0 0 0 0.2rem transparent;
     transition: all $transition-duration ease-in-out;
 
     &:last-child {
@@ -337,7 +354,7 @@ nav {
     }
 
     &:focus-visible {
-      box-shadow: inset 0 0 0 2px $color-lighter;
+      box-shadow: inset 0 0 0 0.2rem $color-lighter;
     }
 
     &:after {
@@ -350,6 +367,7 @@ nav {
       left: 0;
       right: 0;
       background: url('~@/assets/icons/nav-left.svg') center no-repeat transparent;
+      background-size: 1.6rem;
       transition: all $transition-duration ease-in-out;
     }
 
@@ -370,21 +388,21 @@ nav {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin: 19px 0 0;
+    margin: 1.9rem 0 0;
     padding: 0;
     list-style: none;
-    font-size: 16px;
+    font-size: 1.6rem;
 
     &:before {
       position: absolute;
       display: block;
       content: '';
-      top: 7px;
-      left: 7px;
-      right: 7px;
-      height: 2px;
+      top: 0.7rem;
+      left: 0.7rem;
+      right: 0.7rem;
+      height: 0.2rem;
       background: $color-lighter;
-      box-shadow: 0 0 0 2px #fff;
+      box-shadow: 0 0 0 0.2rem #fff;
       z-index: -1;
     }
 
@@ -392,13 +410,13 @@ nav {
       position: relative;
       display: inline-block;
       box-sizing: border-box;
-      width: 14px;
-      height: 14px;
-      margin: 0 10px;
-      border: 2px solid rgba($color-main, 0.3);
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0 1.0rem;
+      border: 0.2rem solid rgba($color-main, 0.3);
       border-radius: 50%;
       background: #fff;
-      box-shadow: 0 0 0 2px #fff;
+      box-shadow: 0 0 0 0.2rem #fff;
       transition: all $transition-duration ease-in-out;
       cursor: pointer;
 
@@ -426,25 +444,25 @@ nav {
       }
 
       &.chapter {
-        margin-left: 50px;
+        margin-left: 5.0rem;
       }
 
       &:before {
         position: absolute;
         display: block;
         content: '';
-        top: -12px;
-        bottom: -12px;
-        left: -12px;
-        right: -32px;
+        top: -1.2rem;
+        bottom: -1.2rem;
+        left: -1.2rem;
+        right: -3.2rem;
       }
 
       &:last-child:before {
-        right: -12px;
+        right: -1.2rem;
       }
 
       &.chapter:before {
-        left: -32px;
+        left: -3.2rem;
       }
 
       &:after {
@@ -453,30 +471,30 @@ nav {
         content: attr(data-title);
         visibility: hidden;
         opacity: 0;
-        top: 22px;
-        left: -80px;
-        right: -80px;
+        top: 2.2rem;
+        left: -8.0rem;
+        right: -8.0rem;
         text-align: center;
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: $weight-bold;
-        line-height: 10px;
+        line-height: 1.0rem;
         text-shadow:
-          0 1px 0 #fff,
-          0 2px 0 #fff,
-          0 -1px 0 #fff,
-          0 -2px 0 #fff,
-          1px 0 0 #fff,
-          2px 0 0 #fff,
-          -1px 0 0 #fff,
-          -2px 0 0 #fff,
-          1px 1px 0 #fff,
-          2px 2px 0 #fff,
-          -1px -1px 0 #fff,
-          -2px -2px 0 #fff,
-          -1px 1px 0 #fff,
-          -2px 2px 0 #fff,
-          1px -1px 0 #fff,
-          2px -2px 0 #fff;
+          0 0.1rem 0 #fff,
+          0 0.2rem 0 #fff,
+          0 -0.1rem 0 #fff,
+          0 -0.2rem 0 #fff,
+          0.1rem 0 0 #fff,
+          0.2rem 0 0 #fff,
+          -0.1rem 0 0 #fff,
+          -0.2rem 0 0 #fff,
+          0.1rem 0.1rem 0 #fff,
+          0.2rem 0.2rem 0 #fff,
+          -0.1rem -0.1rem 0 #fff,
+          -0.2rem -0.2rem 0 #fff,
+          -0.1rem 0.1rem 0 #fff,
+          -0.2rem 0.2rem 0 #fff,
+          0.1rem -0.1rem 0 #fff,
+          0.2rem -0.2rem 0 #fff;
         transition: all $transition-duration ease-in-out;
       }
 
@@ -522,10 +540,10 @@ aside {
     position: absolute;
     display: block;
     content: '';
-    top: 12px;
-    right: 12px;
-    width: 30px;
-    height: 30px;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 3.0rem;
+    height: 3.0rem;
     border-radius: 50%;
     background: #fff;
     pointer-events: none;
@@ -540,14 +558,14 @@ aside {
   button {
     position: absolute;
     opacity: 0.33;
-    top: 14px;
-    right: 14px;
-    width: 26px;
-    height: 26px;
-    border: 2px solid $color-main;
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 0.2rem solid $color-main;
     border-radius: 50%;
     background-color: transparent;
-    box-shadow: 0 0 0 2px transparent, 0 0 0 4px transparent;
+    box-shadow: 0 0 0 0.2rem transparent, 0 0 0 0.4rem transparent;
     transition: all $transition-duration ease-in-out;
     z-index: 13;
 
@@ -561,12 +579,12 @@ aside {
 
     @at-root aside.open button {
       opacity: 0.65;
-      border: 2px solid #fff;
+      border: 0.2rem solid #fff;
       transform: rotate(45deg);    
     }
 
     @at-root aside.open button:focus-visible {
-      box-shadow: 0 0 0 2px #3C4250, 0 0 0 4px rgba(255,255,255,0.45);
+      box-shadow: 0 0 0 0.2rem #3C4250, 0 0 0 0.4rem rgba(255,255,255,0.45);
     }
 
     &:before, &:after {
@@ -578,6 +596,7 @@ aside {
       left: 0;
       right: 0;
       background: url('~@/assets/icons/info.svg') center no-repeat;
+      background-size: 1.6rem;
       pointer-events: none;
       transition: all $transition-duration ease-in-out;
     }
@@ -606,11 +625,11 @@ aside {
     top: 0;
     bottom: 0;
     right: 0;
-    width: 360px;
-    padding: 26px 30px 30px;
+    width: 36.0rem;
+    padding: 2.6rem 3.0rem 3.0rem;
     color: #fff;
     background: #3C4250;
-    transform: translateX(15px);
+    transform: translateX(1.5rem);
     transition: all $transition-duration ease-in-out;
 
     @at-root aside.open section {
@@ -620,13 +639,13 @@ aside {
     }
 
     h1 {
-      font-size: 27px;
+      font-size: 2.7rem;
       line-height: 1.125;
     }
 
     h3 {
-      margin-top: 11px;
-      font-size: 16px;
+      margin-top: 1.1rem;
+      font-size: 1.6rem;
       font-weight: $weight-medium;
       line-height: 1.25;
     }

@@ -49,6 +49,7 @@ export default {
 section {
   background-position: center $canvas-offset-y;
   background-repeat: no-repeat;
+  background-size: 260.0rem;
 
   div {
     position: absolute;
@@ -59,33 +60,33 @@ section {
     transform: $canvas-translate-y;
 
     h3 {
-      margin-bottom: 6px;
-      font-size: 16px;
+      margin-bottom: 0.6rem;
+      font-size: 1.6rem;
       font-weight: $weight-semibold;
-      letter-spacing: 1px;
+      letter-spacing: 0.1rem;
       text-transform: uppercase;
       color: $color-lighter;
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 4.0rem;
     }
 
     p, blockquote {
-      width: 340px;
-      margin: 22px auto 0;
+      width: 34.0rem;
+      margin: 2.2rem auto 0;
       text-align: left;
-      font-size: 14px;
+      font-size: 1.4rem;
       line-height: 1.3;
     }
 
     p {
       &:first-of-type {
-        margin-top: 68px;
+        margin-top: 6.8rem;
       }
 
       &:deep(sup) {
-        top: -4px;
+        top: -0.4rem;
       }
     }
   }
@@ -94,11 +95,11 @@ section {
     background-image: url('~@/assets/chapters/chapter-1.svg');
 
     p:nth-of-type(1) {
-      transform: translateX(-62px);
+      transform: translateX(-6.2rem);
     }
 
     p:nth-of-type(2) {
-      transform: translateX(62px);
+      transform: translateX(6.2rem);
     }
   }
 
@@ -106,13 +107,13 @@ section {
     background-image: url('~@/assets/chapters/chapter-2.svg');
 
     p {
-      width: 416px;
+      width: 41.6rem;
     }
 
     blockquote {
-      width: 384px;
+      width: 38.4rem;
       text-align: center;
-      font-size: 18px;
+      font-size: 1.8rem;
       font-weight: $weight-black;
       font-style: normal;
       line-height: 1.2;

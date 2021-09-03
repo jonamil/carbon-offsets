@@ -82,11 +82,11 @@ export default {
 section {
   .canvas {
     &.left {
-      transform: translateX(calc(-50% - 160px)) $canvas-translate-y;
+      transform: translateX(calc(-50% - 16.0rem)) $canvas-translate-y;
     }
 
     &.right {
-      transform: translateX(calc(-50% + 160px)) $canvas-translate-y;
+      transform: translateX(calc(-50% + 16.0rem)) $canvas-translate-y;
     }
   }
 
@@ -104,6 +104,7 @@ section {
   #preview {
     display: block;
     margin: 0 auto;
+    width: 61.4rem;
   }
 }
 </style>
