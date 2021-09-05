@@ -29,10 +29,7 @@
     <button @click="setPageIndex(currentPageIndex + 1)" />
   </nav>
   <aside :class="{ open: infoDrawerOpen }" @click.self="closeInfoDrawer()">
-    <section>
-      <h1>Carbon Neutrality:<br>A Label For Sale?</h1>
-      <h3>An introduction to carbon offsets:<br>how they work and where they fail</h3>
-    </section>
+    <CreditsText ref="credits" :sources="sources" />
     <button @click="toggleInfoDrawer()" />
   </aside>
 </template>
@@ -42,6 +39,7 @@ import StartPage from '@/components/StartPage.vue';
 import ChapterPage from '@/components/ChapterPage.vue';
 import ExplanationPage from '@/components/ExplanationPage.vue';
 import CycleView from '@/components/CycleView.vue';
+import CreditsText from '@/components/CreditsText.vue';
 
 import pages from '@/data/pages.json';
 import sources from '@/data/sources.json';
@@ -53,7 +51,8 @@ export default {
     StartPage,
     ChapterPage,
     ExplanationPage,
-    CycleView
+    CycleView,
+    CreditsText
   },
 
   data() {
@@ -70,6 +69,8 @@ export default {
       
       lastScrollDelta: 0,
       lastScrollTimestamp: 0,
+
+      referencesOffset: 0
     }
   },
 
@@ -117,6 +118,10 @@ export default {
     },
     toggleInfoDrawer() {
       this.infoDrawerOpen = !this.infoDrawerOpen;
+    },
+    openReferences() {
+      this.$refs.credits.$el.scrollTop = this.referencesOffset;
+      this.openInfoDrawer();
     },
     startTransition() {
       this.transitionInProgress = true;
@@ -194,8 +199,10 @@ export default {
     window.addEventListener('wheel', this.handleWheelEvent, { passive: false });
     window.addEventListener('keydown', this.handleKeypressEvent);
 
+    this.referencesOffset = this.$refs.credits.$el.querySelector('h4:last-of-type').offsetTop;
+
     document.getElementsByTagName('cite').forEach(element => {
-      element.addEventListener('click', this.openInfoDrawer);
+      element.addEventListener('click', this.openReferences);
     });
   },
 
@@ -279,6 +286,7 @@ button {
   box-sizing: border-box;
   padding: 0;
   border: none;
+  background-color: transparent;
   cursor: pointer;
 
   &:focus {
@@ -564,7 +572,6 @@ aside {
     height: 2.6rem;
     border: 0.2rem solid $color-main;
     border-radius: 50%;
-    background-color: transparent;
     box-shadow: 0 0 0 0.2rem transparent, 0 0 0 0.4rem transparent;
     transition: all $transition-duration ease-in-out;
     z-index: 13;
@@ -619,9 +626,9 @@ aside {
   section {
     position: absolute;
     overflow-y: auto;
-    box-sizing: border-box;
     visibility: hidden;
     opacity: 0;
+    box-sizing: border-box;
     top: 0;
     bottom: 0;
     right: 0;
@@ -636,18 +643,6 @@ aside {
       visibility: visible;
       opacity: 1;
       transform: translateX(0);
-    }
-
-    h1 {
-      font-size: 2.7rem;
-      line-height: 1.125;
-    }
-
-    h3 {
-      margin-top: 1.1rem;
-      font-size: 1.6rem;
-      font-weight: $weight-medium;
-      line-height: 1.25;
     }
   }
 }
