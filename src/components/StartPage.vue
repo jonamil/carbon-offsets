@@ -26,6 +26,12 @@ export default {
 @import '~@/assets/variables.scss';
 
 section {
+  background-image: url('~@/assets/start/corner-left.svg'), url('~@/assets/start/corner-right.svg');
+  background-position: 1.5rem bottom, calc(100% - 3.0rem) bottom;
+  background-repeat: no-repeat;
+  background-size: 35.6rem, 38.2rem;
+  // background-size: calc(100vw / 1200 * 356), calc(100vw / 1200 * 382);
+
   h4 {
     position: absolute;
     top: 1.3rem;
@@ -38,10 +44,12 @@ section {
 
   .title {
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 50%;
-    padding-bottom: 30px;
     width: 60.0rem;
+    padding-top: 9.9rem;
+    background: url('~@/assets/start/clouds.svg') top center no-repeat;
+    background-size: 48.8rem;
     transform: translateX(-50%) translateY(-50%);
 
     h1 {
