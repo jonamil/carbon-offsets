@@ -38,7 +38,7 @@ export default {
       let references = [];
 
       for (const reference in this.sources) {
-        if (this.sources[reference].length >= 1 && this.sources[reference] !== '') {
+        if (this.sources[reference].length >= 2 && this.sources[reference] !== '') {
           references.push(this.parseReference(this.sources[reference][1]));
         }
       }

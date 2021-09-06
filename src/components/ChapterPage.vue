@@ -78,15 +78,15 @@ section {
       text-align: left;
       font-size: 1.4rem;
       line-height: 1.3;
+
+      &:deep(sup) {
+        top: -0.4rem;
+      }
     }
 
     p {
       &:first-of-type {
         margin-top: 6.8rem;
-      }
-
-      &:deep(sup) {
-        top: -0.4rem;
       }
     }
   }
@@ -107,16 +107,65 @@ section {
     background-image: url('~@/assets/chapters/chapter-2.svg');
 
     p {
-      width: 41.6rem;
+      width: 41.2rem;
     }
 
     blockquote {
-      width: 38.4rem;
+      width: 38.0rem;
       text-align: center;
       font-size: 1.8rem;
       font-weight: $weight-black;
       font-style: normal;
       line-height: 1.2;
+    }
+  }
+
+  &.an-ineffective-system {
+    div {
+      width: 83.6rem;
+      margin: 0 auto;
+      columns: 2;
+      column-gap: 6.0rem;
+    }
+
+    h3, h1 {
+      column-span: all;
+    }
+
+    p, blockquote {
+      width: 100%;
+      margin-top: 1.7rem;
+      break-inside: avoid;
+    }
+
+    p:nth-of-type(3) {
+      margin-top: 0;
+      padding-top: 11.4rem;
+      break-before: always;
+    }
+
+    blockquote {
+      position: relative;
+      font-size: 1.55rem;
+      font-weight: $weight-medium;
+      line-height: 1.25;
+
+      &:before {
+        position: absolute;
+        display: block;
+        content: '“';
+        top: -2.5rem;
+        left: -1.0rem;
+        font-size: 11.8rem;
+        font-style: normal;
+        font-weight: $weight-black;
+        font-variation-settings: 'opsz' 38;
+        color: rgba($color-main, 0.12);
+      }
+
+      &:deep(sup):first-of-type {
+        margin-left: 0.2rem;
+      }
     }
   }
 }

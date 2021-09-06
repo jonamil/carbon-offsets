@@ -38,7 +38,7 @@ export default {
         return '<sup>' + number + cite + '</sup>';
       });
 
-      content = content.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+      content = content.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>');
       content = content.replace(/\*(.*)\*/gim, '<em>$1</em>');
 
       return content;

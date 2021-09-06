@@ -14,7 +14,7 @@
 			},
 			{
 				"type": "paragraph",
-				"content": "The goal of these pledges: becoming “carbon neutral” and reaching “net zero” emissions. Yet more often than not, companies’ intentions are not actually to bring their emissions down to zero. Instead, they compensate their climate impact through the process of carbon offsetting.[2]"
+				"content": "The goal of these pledges: becoming “carbon neutral” and reaching “net zero” emissions. Yet more often than not, polluters’ intentions are not actually to bring their emissions down to zero. Instead, they compensate their climate impact through the process of carbon offsetting.[2]"
 			}
 		]
 	},
@@ -53,7 +53,7 @@
 		"elements": [
 			{
 				"type": "paragraph",
-				"content": "Because greenhouse gases equally contribute to global warming no matter where they occur, emissions caused in one part of the world can be “offset” by emissions prevented in another. These exchanges take the shape of carbon markets, through which projects sell their positive climate impacts to countries, companies and consumers. The projects receive money, in turn issuing certificates for a certain amount of carbon emissions they have compensated.[6]"
+				"content": "Because greenhouse gases equally contribute to global warming no matter where they occur, emissions caused in one part of the world can be “offset” by emissions prevented in another. These exchanges take the shape of carbon markets, through which projects sell their positive climate impacts to countries, companies and consumers. The projects receive money, in turn issuing certificates for a certain amount of emissions they have compensated.[6]"
 			},
 			{
 				"type": "paragraph",
@@ -171,16 +171,64 @@
 	{
 		"title": "Permanence",
 		"type": "explanation",
-		"cyclePosition": "left"
+		"cyclePosition": "left",
+		"textOffset": "top",
+		"connectorOffset": -118,
+		"connectorWidth": 167,
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "Because greenhouse gas emissions have long-lasting effects on the climate, the emission reductions pursued by offset projects must be similarly permanent. If these reductions are later reversed, they no longer serve a compensatory function.[25]"
+			},
+			{
+				"type": "paragraph",
+				"content": "Forestry-related projects, which store carbon in trees and soils, are most vulnerable to such reversals. In case of wildfires, pests or illegal logging or burning, the stored carbon is released back into the atmosphere. Afforestation and similar measures can therefore only temporarily ensure a reduction in carbon emissions.[26]"
+			},
+			{
+				"type": "paragraph",
+				"content": "In addition, certain kinds of projects may unintentionally shift emissions elsewhere instead of eliminating them. The reforestation of pastureland, for instance, may drive farmers to clear forest elsewhere in order to regain their pastures. This second, more indirect kind of reduction reversal is referred to as “leakage”.[27][28]"
+			}
+		]
 	},
 	{
 		"title": "Double Crediting",
 		"type": "explanation",
-		"cyclePosition": "left"
+		"cyclePosition": "left",
+		"textOffset": "bottom",
+		"connectorOffset": 182,
+		"connectorWidth": 222,
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "Apart from issues with the effectivity of offset projects themselves, the trade of certificates can likewise introduce problems and enable ways of exploiting the system. On one hand, projects may issue multiple certificates for a single emission reduction, earning them more money. On the other, multiple parties may claim the same certificate and, as a result, the same carbon offset for themselves.[29] Both cases result in emissions that appear to be offset on paper, but are actually unaccounted for."
+			}
+		]
 	},
 	{
 		"title": "An Ineffective System",
 		"type": "chapter",
-		"preTitle": "Conclusion"
+		"preTitle": "Conclusion",
+		"elements": [
+			{
+				"type": "paragraph",
+				"content": "Carbon offsetting appears deceptively simple if presented as a balanced cycle of emissions and compensations. Yet a closer look reveals a complex set of conditions which can easily render the system ineffective if projects do not meet them."
+			},
+			{
+				"type": "paragraph",
+				"content": "A 2016 report on projects certified under the UN’s Clean Development Mechanism, one of the most widespread carbon offset standards that often serves as a benchmark for others,[30] comes to a damning conclusion:"
+			},
+			{
+				"type": "quote",
+				"content": "Only 2% of the projects and 7% of potential CER[31] supply have a high likelihood of ensuring that emission reductions are additional and are not over-estimated. […] It is likely that the large majority of the projects registered and CERs issued […] are not providing real, measurable and additional emission reductions.[32]"
+			},
+			{
+				"type": "paragraph",
+				"content": "So is “carbon neutrality” indeed a label for sale? In many cases, the answer appears to be yes. Too often, countries and companies get away with greenwashed claims of “net zero emissions” while, in reality, simply buying certificates from projects that might not even be effective."
+			},
+			{
+				"type": "paragraph",
+				"content": "As citizens and consumers, we must demand more transparency and hold them accountable for changing their business practices in truly sustainable ways. And, the next time we see a carbon offsetting option while booking a ride or flight, pay very close attention to the kinds of offset projects involved."
+			}
+		]
 	}
 ]
