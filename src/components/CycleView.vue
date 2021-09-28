@@ -168,7 +168,7 @@ section.cycle {
       position: absolute;
       visibility: hidden;
       opacity: 0;
-      transition: all $transition-duration ease-in-out;
+      transition: visibility $transition-duration ease-in-out, opacity $transition-duration ease-in-out;
 
       &.visible {
         visibility: visible;
@@ -329,7 +329,7 @@ section.cycle {
     left: 56.3rem;
 
     svg {
-      transition: all $transition-duration ease-in-out;
+      transition: visibility $transition-duration ease-in-out, opacity $transition-duration ease-in-out;
     }
 
     svg.detailed {
@@ -342,7 +342,7 @@ section.cycle {
 
     span {
       top: 17.7rem;
-      transition: all $transition-duration ease-in-out;
+      transition: visibility $transition-duration ease-in-out, opacity $transition-duration ease-in-out;
     }
 
     &.detailed {
@@ -366,7 +366,7 @@ section.cycle {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      transition: all $transition-duration ease-in-out;
+      transition: visibility $transition-duration ease-in-out, opacity $transition-duration ease-in-out;
     }
 
     svg.money {

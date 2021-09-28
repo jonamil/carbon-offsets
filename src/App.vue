@@ -266,7 +266,7 @@ html {
   width: 112.0rem;
   height: 56.05rem;
   transform: translateX(-50%) $canvas-translate-y;
-  transition: all $transition-duration ease-in-out;
+  transition: transform $transition-duration ease-in-out;
 }
 
 h1, h2, h3, h4 {
@@ -323,7 +323,7 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    transition: all $transition-duration ease-in-out;
+    transition: visibility $transition-duration ease-in-out, opacity $transition-duration ease-in-out;
     z-index: 1;
 
     &.visible {
@@ -342,7 +342,9 @@ nav {
   right: 0;
   min-width: 75.0rem;
   text-align: center;
-  transition: all $transition-duration ease-in-out;
+  transition-property: visibility, opacity, top;
+  transition-duration: $transition-duration;
+  transition-timing-function: ease-in-out;
   z-index: 3;
 
   &.visible {
@@ -363,7 +365,7 @@ nav {
     background: url('~@/assets/icons/nav-left-stroke.svg') center no-repeat transparent;
     background-size: 2.0rem;
     box-shadow: inset 0 0 0 0.2rem transparent;
-    transition: all $transition-duration ease-in-out;
+    transition: box-shadow $transition-duration ease-in-out;
 
     &:last-child {
       background-image: url('~@/assets/icons/nav-right-stroke.svg');
@@ -384,7 +386,7 @@ nav {
       right: 0;
       background: url('~@/assets/icons/nav-left.svg') center no-repeat transparent;
       background-size: 1.6rem;
-      transition: all $transition-duration ease-in-out;
+      transition: opacity $transition-duration ease-in-out;
     }
 
     &:last-child:after {
@@ -433,7 +435,7 @@ nav {
       border-radius: 50%;
       background: #fff;
       box-shadow: 0 0 0 0.2rem #fff;
-      transition: all $transition-duration ease-in-out;
+      transition: border-color $transition-duration ease-in-out, background $transition-duration ease-in-out;
       cursor: pointer;
 
       &:first-child {
@@ -511,7 +513,7 @@ nav {
           -0.2rem 0.2rem 0 #fff,
           0.1rem -0.1rem 0 #fff,
           0.2rem -0.2rem 0 #fff;
-        transition: all $transition-duration ease-in-out;
+        transition: visibility $transition-duration ease-in-out, opacity $transition-duration ease-in-out;
       }
 
       &.active:after {
@@ -544,7 +546,7 @@ aside {
   left: 0;
   right: 0;
   pointer-events: none;
-  transition: all $transition-duration ease-in-out;
+  transition: background $transition-duration ease-in-out;
   z-index: 10;
 
   &.open {
@@ -581,7 +583,9 @@ aside {
     border: 0.2rem solid $color-main;
     border-radius: 50%;
     box-shadow: 0 0 0 0.2rem transparent, 0 0 0 0.4rem transparent;
-    transition: all $transition-duration ease-in-out;
+    transition-property: opacity, border, box-shadow, transform;
+    transition-duration: $transition-duration;
+    transition-timing-function: ease-in-out;
     z-index: 13;
 
     &:hover {
@@ -613,7 +617,7 @@ aside {
       background: url('~@/assets/icons/info.svg') center no-repeat;
       background-size: 1.6rem;
       pointer-events: none;
-      transition: all $transition-duration ease-in-out;
+      transition: opacity $transition-duration ease-in-out;
     }
 
     @at-root aside.open button:before {
@@ -645,7 +649,9 @@ aside {
     color: #fff;
     background: #3C4250;
     transform: translateX(1.5rem);
-    transition: all $transition-duration ease-in-out;
+    transition-property: visibility, opacity, transform;
+    transition-duration: $transition-duration;
+    transition-timing-function: ease-in-out;
 
     @at-root aside.open section {
       visibility: visible;

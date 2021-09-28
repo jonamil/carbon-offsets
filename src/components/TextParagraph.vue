@@ -61,7 +61,7 @@ p, blockquote {
     border-radius: 0.2rem;
     background: rgba($color-main, 0.15);
     cursor: pointer;
-    transition: all $transition-duration ease-in-out;
+    transition: color $transition-duration ease-in-out, background $transition-duration ease-in-out;
 
     &:hover {
       color: #fff;
@@ -90,7 +90,7 @@ p, blockquote {
       background: $color-main;
       color: #fff;
       cursor: e-resize;
-      transition: all $transition-duration ease-in-out;
+      transition: visibility $transition-duration ease-in-out, opacity $transition-duration ease-in-out;
 
       @at-root sup:hover cite {
         visibility: visible;
