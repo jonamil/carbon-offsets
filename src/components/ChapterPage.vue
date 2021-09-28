@@ -47,7 +47,7 @@ export default {
 @import '~@/assets/variables.scss';
 
 section {
-  background-position: center $canvas-offset-y;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 260.0rem;
 
@@ -121,6 +121,8 @@ section {
   }
 
   &.an-ineffective-system {
+    background-image: url('~@/assets/chapters/chapter-3.svg');
+
     div {
       width: 83.6rem;
       margin: 0 auto;
