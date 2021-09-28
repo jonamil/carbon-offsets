@@ -4,6 +4,7 @@
       :currentPageIndex="currentPageIndex"
       :currentPageData="currentPageData"
       :transitionDuration="transitionDuration"
+      :class="{ visible: cycleVisible }"
       class="cycle"
     />
     <component
@@ -62,6 +63,7 @@ export default {
 
       currentPageIndex: 0,
       currentVisiblePageIndex: 0,
+      cycleVisible: false,
       infoDrawerOpen: false,
 
       transitionDuration: 400,
@@ -127,7 +129,7 @@ export default {
       this.transitionInProgress = true;
       setTimeout(() => {
         this.transitionInProgress = false;
-      }, this.transitionDuration);
+      }, this.transitionDuration * 1.5);
     },
     handleWheelEvent(event) {
       if (!event.ctrlKey && !event.target.matches('aside *')) {
@@ -163,7 +165,7 @@ export default {
       if (!event.target.matches('aside *')) {
         const keyCode = Number.parseInt(event.keyCode);
 
-        if ([37, 38, 39, 40].includes(keyCode)) {
+        if ([32, 37, 38, 39, 40].includes(keyCode)) {
           if (this.infoDrawerOpen) {
             this.closeInfoDrawer();
           } else {
@@ -186,11 +188,13 @@ export default {
   },
 
   watch: {
-    currentPageIndex: function(newPageIndex) {
+    currentPageIndex: function() {
       this.currentVisiblePageIndex = false;
+      if (this.currentPageData.type !== 'explanation') this.cycleVisible = false;
 
       setTimeout(() => {
-        this.currentVisiblePageIndex = newPageIndex;
+        this.currentVisiblePageIndex = this.currentPageIndex;
+        if (this.currentPageData.type === 'explanation') this.cycleVisible = true;
       }, this.transitionDuration / 2);
     }
   },
@@ -252,7 +256,7 @@ html {
   top: 50%;
   left: 50%;
   width: 112.0rem;
-  height: 56.0rem;
+  height: 56.05rem;
   transform: translateX(-50%) $canvas-translate-y;
   transition: all $transition-duration ease-in-out;
 }
@@ -302,7 +306,7 @@ main section, nav, aside {
   transform: translate3d(0,0,0);
 }
 
-main  {
+main {
   section {
     position: absolute;
     visibility: hidden;
@@ -314,13 +318,9 @@ main  {
     transition: all $transition-duration ease-in-out;
     z-index: 1;
 
-    &.visible, &.cycle {
+    &.visible {
       visibility: visible;
       opacity: 1;
-    }
-
-    &.cycle {
-      pointer-events: none;
     }
   }
 }

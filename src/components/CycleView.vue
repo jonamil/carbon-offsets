@@ -29,7 +29,7 @@ export default {
     return {
       elementClasses: {
         'preview': {
-          'visible': [2, 3, 4, 6, 7, 8, 9, 10, 11]
+          'visible': true
         }
       },
 
@@ -39,21 +39,15 @@ export default {
   },
 
   methods: {
-    transition(direction = 'out') {
+    refreshClasses() {
       for (const elementName in this.elementClasses) {
-        if (!(elementName in this.currentClasses)) this.currentClasses[elementName] = [];
+        this.currentClasses[elementName] = [];
 
         for (const className in this.elementClasses[elementName]) {
           const classIndexes = this.elementClasses[elementName][className];
 
-          if (direction === 'out') {
-            if (!classIndexes.includes(this.currentPageIndex)) {
-              this.currentClasses[elementName] = this.currentClasses[elementName].filter(item => item !== className);
-            }
-          } else if (direction === 'in') {
-            if (classIndexes.includes(this.currentPageIndex) && !this.currentClasses[elementName].includes(className)) {
-              this.currentClasses[elementName].push(className);
-            }
+          if (classIndexes === true || classIndexes.includes(this.currentPageIndex)) {
+            this.currentClasses[elementName].push(className);
           }
         }
       }
@@ -62,10 +56,8 @@ export default {
 
   watch: {
     currentPageIndex: function() {
-      this.transition('out');
-
       setTimeout(() => {
-        this.transition('in');
+        this.refreshClasses();
       }, this.transitionDuration / 2);
     },
 
