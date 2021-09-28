@@ -103,12 +103,16 @@
 		"type": "explanation",
 		"cyclePosition": "left",
 		"textOffset": "bottom",
-		"connectorOffset": 40,
-		"connectorWidth": 44,
+		"connectorOffset": 42,
+		"connectorWidth": 42,
 		"elements": [
 			{
 				"type": "paragraph",
 				"content": "Carbon offsets are almost always explained with the example of forest-related projects, evoking associations of trees that quite literally suck CO₂ back out of the atmosphere. Yet the reality is much more complex, as many different kinds of offset projects exist. Beside tree planting, renewable energy projects are widespread as well, as are projects revolving around the optimization of fossil fuel sources and the capture of toxic nitrogen dioxide fumes created as a byproduct of chemical processes.[10][11][12][13]"
+			},
+			{
+				"type": "image",
+				"content": "project-diversity"
 			},
 			{
 				"type": "paragraph",
@@ -121,8 +125,8 @@
 		"type": "explanation",
 		"cyclePosition": "left",
 		"textOffset": "top",
-		"connectorOffset": -118,
-		"connectorWidth": 167,
+		"connectorOffset": -200,
+		"connectorWidth": 122,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -151,12 +155,16 @@
 		"type": "explanation",
 		"cyclePosition": "left",
 		"textOffset": "top",
-		"connectorOffset": -118,
-		"connectorWidth": 167,
+		"connectorOffset": -200,
+		"connectorWidth": 121,
 		"elements": [
 			{
 				"type": "paragraph",
 				"content": "In order to calculate an offset project’s climate benefits, a baseline must be established. This baseline reflects the hypothetical scenario of what would have happened if an offset project had not been implemented and business had instead carried on as usual. The amount of certificates sold by a project is equal to the difference between emissions in the baseline scenario and emissions generated with the offset project in place.[22][23]"
+			},
+			{
+				"type": "image",
+				"content": "inaccurate-calculations"
 			},
 			{
 				"type": "paragraph",
@@ -173,8 +181,8 @@
 		"type": "explanation",
 		"cyclePosition": "left",
 		"textOffset": "top",
-		"connectorOffset": -118,
-		"connectorWidth": 167,
+		"connectorOffset": -200,
+		"connectorWidth": 120,
 		"elements": [
 			{
 				"type": "paragraph",
@@ -183,6 +191,10 @@
 			{
 				"type": "paragraph",
 				"content": "Forestry-related projects, which store carbon in trees and soils, are most vulnerable to such reversals. In case of wildfires, pests or illegal logging or burning, the stored carbon is released back into the atmosphere. Afforestation and similar measures can therefore only temporarily ensure a reduction in carbon emissions.[26]"
+			},
+			{
+				"type": "image",
+				"content": "permanence"
 			},
 			{
 				"type": "paragraph",
@@ -201,6 +213,10 @@
 			{
 				"type": "paragraph",
 				"content": "Apart from issues with the effectivity of offset projects themselves, the trade of certificates can likewise introduce problems and enable ways of exploiting the system. On one hand, projects may issue multiple certificates for a single emission reduction, earning them more money. On the other, multiple parties may claim the same certificate and, as a result, the same carbon offset for themselves.[29] Both cases result in emissions that appear to be offset on paper, but are actually unaccounted for."
+			},
+			{
+				"type": "image",
+				"content": "double-crediting"
 			}
 		]
 	},

@@ -5,8 +5,8 @@
     <h4>Team</h4>
     <p>Luka Saje<br>Jona Pomerance</p>
     <h4>Background</h4>
-    <p>This project was created within the course “Friday for Future” taught by Prof. Klaus Keller at&nbsp;<a target="_blank" href="https://fh-potsdam.de/en/">Fachhochschule Potsdam</a> in Summer 2021.</p>
-    <a target="_blank" href="https://fh-potsdam.de/en/">
+    <p>This project was created within the course “Friday for Future” taught by Prof. Klaus Keller at&nbsp;<a target="_blank" href="https://www.en.fh-potsdam.de/">Fachhochschule Potsdam</a> in Summer 2021.</p>
+    <a target="_blank" href="https://www.en.fh-potsdam.de/">
       <img src="@/assets/fhp.svg" />
     </a>
     <h4>Publish Date</h4>
