@@ -135,7 +135,7 @@ section {
 
     p {
       margin: 0.8rem 0 0;
-      line-height: 1.3;
+      line-height: 1.25;
     }
 
     blockquote {
