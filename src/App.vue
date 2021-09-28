@@ -212,6 +212,10 @@ export default {
 
     this.referencesOffset = this.$refs.credits.$el.querySelector('h4:last-of-type').offsetTop;
 
+    document.querySelector('main section:nth-child(2) .prompt').addEventListener('click', () => {
+      this.setPageIndex(this.currentPageIndex + 1);
+    });
+
     document.getElementsByTagName('cite').forEach(element => {
       element.addEventListener('click', this.openReferences);
     });

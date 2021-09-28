@@ -96,21 +96,23 @@ section {
 
   .prompt {
     position: absolute;
-    bottom: 5.0rem;
+    bottom: 0;
     left: 0;
     right: 0;
+    padding: 1.6rem 0 5.0rem;
     text-align: center;
     font-size: 1.6rem;
     font-weight: $weight-semibold;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     color: $color-lighter;
+    cursor: pointer;
 
     &:after {
       position: absolute;
       display: block;
       content: '';
-      bottom: -3.7rem;
+      bottom: 1.3rem;
       left: 0;
       right: 0;
       height: 3.2rem;
