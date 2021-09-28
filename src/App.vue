@@ -184,6 +184,12 @@ export default {
       } else {
         return event;
       }
+    },
+    handleSwipeEvent(event) {
+      if (!event.target.matches('aside, aside *, nav, nav *')) {
+        if (event.detail.dir === 'down' || event.detail.dir === 'right') this.setPageIndex(this.currentPageIndex - 1);
+        else this.setPageIndex(this.currentPageIndex + 1);
+      }
     }
   },
 
@@ -199,9 +205,10 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     window.addEventListener('wheel', this.handleWheelEvent, { passive: false });
     window.addEventListener('keydown', this.handleKeypressEvent);
+    window.addEventListener('swiped', this.handleSwipeEvent);
 
     this.referencesOffset = this.$refs.credits.$el.querySelector('h4:last-of-type').offsetTop;
 
@@ -210,9 +217,10 @@ export default {
     });
   },
 
-  unmounted () {
+  unmounted() {
     window.removeEventListener('wheel', this.handleWheelEvent);
     window.removeEventListener('keydown', this.handleKeypressEvent);
+    window.removeEventListener('swiped', this.handleSwipeEvent);
   }
 }
 </script>

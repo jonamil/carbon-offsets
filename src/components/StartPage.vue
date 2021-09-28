@@ -5,7 +5,9 @@
       <h1>Carbon Neutrality:<br>A Label For Sale?</h1>
       <h3>An introduction to carbon offsets:<br>how they work and where they fail</h3>
     </div>
-    <div class="prompt">Scroll to begin</div>
+    <div class="prompt">
+      {{ touchInteractions ? 'Swipe' : 'Scroll' }} to begin
+    </div>
     <InlineSvg :src="pathToImage('corner-left')" />
     <InlineSvg :src="pathToImage('corner-right')" />
   </section>
@@ -22,6 +24,12 @@ export default {
     InlineSvg
   },
 
+  data() {
+    return {
+      touchInteractions: false
+    }
+  },
+
   props: {
     class: {
       type: String,
@@ -36,6 +44,12 @@ export default {
       } catch (error) {
         return '';
       }
+    }
+  },
+
+  mounted() {
+    if (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
+      this.touchInteractions = true;
     }
   }
 }
