@@ -1,0 +1,10 @@
+<svg width="27.0rem" height="6.0rem" viewBox="0 0 270 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path id="text-path" d="M0.999989 1C37.0195 32.1249 84.2667 51 136 51C187.733 51 234.981 32.1249 271 1" />
+  </defs>
+  <text text-anchor="middle">
+    <textPath xlink:href="#text-path" startOffset="50%">
+      Certificates are traded for money
+    </textPath>
+  </text>
+</svg>

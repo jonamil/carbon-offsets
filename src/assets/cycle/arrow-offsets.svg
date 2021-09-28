@@ -1,0 +1,5 @@
+<svg width="12.8rem" height="12.8rem" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="solid line" d="M30.084 18.8125C54.7202 41.8847 72.7859 71.4539 82.0713 107.189" stroke-width="8" stroke="#21C037" />
+<path class="dashed line" d="M30.084 18.8125C54.7202 41.8847 72.7859 71.4539 82.0713 107.189" stroke-width="11" stroke="white" stroke-opacity="0" stroke-dasharray="8 8" />
+<path class="solid head" d="M97.9145 79.459L81.8318 107.119L54.1719 91.0363" stroke="#21C037" stroke-width="8" />
+</svg>
