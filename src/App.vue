@@ -138,12 +138,12 @@ export default {
           const currentTimestamp = event.timeStamp;
           const timeSinceLastEvent = currentTimestamp - this.lastScrollTimestamp;
 
-          let stillDecelerating = false;
-          if (Math.sign(this.lastScrollDelta) === Math.sign(currentDelta)) {
-            stillDecelerating = Math.sign(currentDelta) * (this.lastScrollDelta - currentDelta) >= 0;
+          let isDecelerating = false;
+          if (Math.sign(this.lastScrollDelta) === Math.sign(currentDelta) && Math.sign(currentDelta) * (this.lastScrollDelta - currentDelta) >= 0) {
+            isDecelerating = true;
           }
 
-          if (!(timeSinceLastEvent < 200 && stillDecelerating)) {
+          if (!(timeSinceLastEvent < 200 && isDecelerating)) {
             if (this.infoDrawerOpen) {
               this.closeInfoDrawer(true);
             } else {
@@ -236,6 +236,7 @@ export default {
 
 html, body {
   overflow: hidden;
+  touch-action: none;
 }
 
 html {
@@ -312,6 +313,10 @@ button {
   &:focus-visible {
     box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.4rem $color-lighter;
   }
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 main section, nav, aside {
